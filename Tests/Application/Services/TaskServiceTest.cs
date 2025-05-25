@@ -66,7 +66,7 @@ namespace csharp_demo_api.Tests.Application.Services
             // Arrange
             var taskId = Guid.NewGuid();
             _mockRepository.Setup(r => r.GetByIdAsync(taskId))
-                           .ReturnsAsync((TaskEntity)null);
+                           .ReturnsAsync((TaskEntity?)null);
 
             // Act
             var result = await _sut.GetTaskByIdAsync(taskId);
