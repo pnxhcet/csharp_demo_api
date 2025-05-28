@@ -8,14 +8,9 @@ using csharp_demo_api.Infrastructure.Persistence;
 
 namespace csharp_demo_api.Infrastructure.Repositories
 {
-    public class TaskRepository : ITaskRepository
+    public class TaskRepository(AppDbContext context) : ITaskRepository
     {
-        private readonly AppDbContext _context;
-
-        public TaskRepository(AppDbContext context)
-        {
-            _context = context;
-        }
+        private readonly AppDbContext _context = context;
 
         public async Task<IEnumerable<TaskEntity>> GetAllAsync()
         {

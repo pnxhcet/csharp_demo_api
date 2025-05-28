@@ -8,7 +8,7 @@ public class TaskEntityConfiguration : IEntityTypeConfiguration<TaskEntity>
 {
     public void Configure(EntityTypeBuilder<TaskEntity> entity)
     {
-        entity.ToTable("task", "demo");
+        entity.ToTable("task", "dbo");
 
         entity.HasKey(e => e.Id);
         entity.Property(e => e.Id).HasColumnName("id");
